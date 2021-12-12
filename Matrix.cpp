@@ -96,7 +96,7 @@ std::vector<double> Matrix::solve_gauss(Matrix equal_to) {
         extended_matrix[i].push_back(equal_to.getMatrix()[i][0]);
     }
 
-    const double eps = 0.00001;
+    const double eps = 1e-17;
     for (int k = 0; k < extended_matrix.size(); ++k) {
         for (int i = k; i < extended_matrix.size(); ++i) {
             auto buf = extended_matrix[i][k];
