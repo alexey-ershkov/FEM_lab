@@ -5,6 +5,7 @@
 #ifndef MKE_MATRIX_H
 #define MKE_MATRIX_H
 
+#include <utility>
 #include <vector>
 #include <utility>
 #include <exception>
@@ -12,7 +13,7 @@
 
 class Matrix {
 public:
-    Matrix(std::vector<std::vector<double>> init_matrix);
+    Matrix(std::vector<std::vector<double>> init_matrix) : matrix(std::move(init_matrix)) {};
 
     Matrix operator*=(int value);
 
@@ -25,6 +26,8 @@ public:
     Matrix operator+=(const Matrix &rhs_matrix);
 
     Matrix operator-=(const Matrix &rhs_matrix);
+
+    Matrix operator-();
 
     std::vector<std::vector<double>> getMatrix() {
         return matrix;

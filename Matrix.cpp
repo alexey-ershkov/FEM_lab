@@ -4,11 +4,6 @@
 
 #include "Matrix.h"
 
-
-Matrix::Matrix(std::vector<std::vector<double>> init_matrix) {
-    matrix = std::move(init_matrix);
-}
-
 Matrix Matrix::operator*=(int value) {
     for (auto &line: matrix) {
         for (auto &elem: line) {
@@ -120,4 +115,14 @@ std::vector<double> Matrix::solve_gauss(Matrix equal_to) {
     }
 
     return out;
+}
+
+Matrix Matrix::operator-() {
+    for (auto &line: matrix) {
+        for (auto &elem: line) {
+            elem *= -1;
+        }
+    }
+
+    return matrix;
 }

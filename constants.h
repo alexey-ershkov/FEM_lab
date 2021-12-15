@@ -13,6 +13,6 @@
 #define D 20
 
 #define U_0 11
-#define dU_dX_at_100 -10
+#define dU_dX_at_100 10
 
 #endif //MKE_CONSTANTS_H
