@@ -9,7 +9,7 @@
 #define END 100
 
 #define A 5
-#define B 7
+#define B -7
 #define D 20
 
 #define U_0 11
